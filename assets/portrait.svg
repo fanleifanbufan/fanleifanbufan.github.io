@@ -1,0 +1,41 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1067" viewBox="0 0 800 1067">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#14141c"/>
+      <stop offset="100%" stop-color="#1a1a24"/>
+    </linearGradient>
+    <linearGradient id="glow1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c9a96e" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#c9a96e" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="glow2" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c9a96e" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#c9a96e" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1067" fill="url(#bg)"/>
+  <rect width="800" height="1067" fill="url(#glow1)"/>
+  <rect width="800" height="1067" fill="url(#glow2)"/>
+  <!-- Decorative lines -->
+  <line x1="40" y1="40" x2="200" y2="40" stroke="#c9a96e" stroke-opacity="0.3" stroke-width="1"/>
+  <line x1="40" y1="40" x2="40" y2="200" stroke="#c9a96e" stroke-opacity="0.3" stroke-width="1"/>
+  <line x1="760" y1="1027" x2="600" y2="1027" stroke="#c9a96e" stroke-opacity="0.3" stroke-width="1"/>
+  <line x1="760" y1="1027" x2="760" y2="867" stroke="#c9a96e" stroke-opacity="0.3" stroke-width="1"/>
+  <!-- Silhouette figure -->
+  <ellipse cx="400" cy="340" rx="120" ry="140" fill="#22222a"/>
+  <ellipse cx="400" cy="300" rx="85" ry="90" fill="#2a2a34"/>
+  <!-- Shoulders -->
+  <path d="M280 460 Q280 400 320 380 Q400 420 480 380 Q520 400 520 460 Z" fill="#2a2a34"/>
+  <path d="M270 460 Q270 420 300 420 Q350 470 450 470 Q500 420 530 420 Q560 420 560 460 Q560 500 270 500 Z" fill="#22222a"/>
+  <!-- Collar -->
+  <path d="M360 430 L400 460 L440 430" stroke="#c9a96e" stroke-opacity="0.5" stroke-width="1" fill="none"/>
+  <!-- Badge text -->
+  <text x="400" y="560" text-anchor="middle" font-family="'Noto Serif SC','STSong',serif" font-size="28" fill="#c9a96e" letter-spacing="8">樊 磊</text>
+  <text x="400" y="590" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#5c5862" letter-spacing="4">情 感 导 师</text>
+  <!-- Placeholder hint -->
+  <rect x="240" y="640" width="320" height="40" rx="0" fill="none" stroke="#2a2a34" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="400" y="666" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#5c5862" letter-spacing="2">替换为你的真实照片</text>
+  <!-- Bottom deco -->
+  <line x1="300" y1="700" x2="500" y2="700" stroke="#2a2a34" stroke-width="1"/>
+  <circle cx="400" cy="700" r="2" fill="#c9a96e" fill-opacity="0.5"/>
+</svg>
