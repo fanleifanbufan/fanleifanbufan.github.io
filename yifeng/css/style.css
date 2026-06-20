@@ -6,10 +6,10 @@
 @media(max-width:768px){.hero-inner{padding:36px 20px}#heroCanvas{display:block}}
 
 /* Root */
-:root{--bg:#0a0a0e;--bg-alt:#101016;--bg-card:#181820;--accent:#c9a96e;--accent-light:#dfc28a;--accent-glow:rgba(201,169,110,.08);--text:#ece8e1;--text-sec:#96929a;--text-muted:#5c5862;--border:#22222a;--font-serif:'Noto Serif SC',serif;--font-sans:'Noto Sans SC',sans-serif;--cw:1700px;--nav:70px;--ease:cubic-bezier(.22,1,.36,1)}
+:root{--bg:#0a0a0e;--bg-alt:#101016;--bg-card:#181820;--accent:#c9a96e;--accent-light:#dfc28a;--accent-glow:rgba(201,169,110,.08);--text:#ece8e1;--text-sec:#96929a;--text-muted:#5c5862;--border:#22222a;--font-serif:'Noto Serif SC','STSong','SimSun','STZhongsong',serif;--font-sans:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;--cw:1700px;--nav:70px;--ease:cubic-bezier(.22,1,.36,1)}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
-body{font-family:var(--font-sans);font-size:16px;line-height:1.7;color:var(--text);background:var(--bg)}
+body{font-family:var(--font-sans);font-size:16px;line-height:1.7;color:var(--text);background:var(--bg);text-rendering:optimizeLegibility}
 a{color:inherit;text-decoration:none}
 ul{list-style:none}
 img{display:block;max-width:100%}
@@ -54,10 +54,10 @@ img{display:block;max-width:100%}
 /* Hero */
 .hero{position:relative;width:100%;min-height:100vh;display:flex;align-items:center;justify-content:center;padding-top:var(--nav);overflow:hidden}
 .hero-inner{position:relative;z-index:2;width:100%;text-align:center;padding:60px 0}
-.hero-badge{display:inline-block;font-size:13px;font-weight:600;color:#e8d5a0;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;border:1px solid rgba(201,169,110,.45);padding:6px 20px;border-radius:20px;-webkit-font-smoothing:antialiased}
-.hero-title{font-size:clamp(48px,6vw,96px);font-weight:800;font-family:var(--font-serif);letter-spacing:4px;margin-bottom:12px;line-height:1.1;color:#ffffff;-webkit-font-smoothing:antialiased;text-shadow:0 1px 0 rgba(0,0,0,.3)}
-.hero-subtitle{font-size:clamp(16px,1.8vw,22px);color:#ffffff;margin-bottom:20px;letter-spacing:1px;font-weight:600;-webkit-font-smoothing:antialiased}
-.hero-desc{font-size:15px;color:#f0ece4;max-width:600px;margin:0 auto 36px;line-height:1.8;font-weight:500;-webkit-font-smoothing:antialiased}
+.hero-badge{display:inline-block;font-size:13px;font-weight:500;color:var(--accent);letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;border:1px solid rgba(201,169,110,.35);padding:6px 20px;border-radius:20px}
+.hero-title{font-size:clamp(48px,6vw,96px);font-weight:700;font-family:var(--font-serif);letter-spacing:4px;margin-bottom:12px;line-height:1.1;color:#ffffff;text-shadow:0 1px 0 rgba(0,0,0,.4)}
+.hero-subtitle{font-size:clamp(16px,1.8vw,22px);color:#ffffff;margin-bottom:20px;letter-spacing:1px;font-weight:500}
+.hero-desc{font-size:15px;color:#f0ece4;max-width:600px;margin:0 auto 36px;line-height:1.8;font-weight:400}
 .hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 .scroll-indicator{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);text-align:center;color:var(--text-muted);font-size:12px;letter-spacing:2px}
 .scroll-arrow{width:1px;height:32px;background:var(--text-muted);margin:8px auto 0;animation:scrollBounce 2s infinite}
