@@ -1,6 +1,6 @@
 ﻿# ============================================
-# 一键部署脚本 - 樊磊个人简历网站
-# 使用方法：编辑完文件后运行此脚本即可部署
+# 一键部署脚本 - 樊磊个人网站 + COLEX名片服务
+# 使用方法：编辑文件后运行此脚本即可部署
 # ============================================
 
 param([string]$Token = "")
@@ -25,24 +25,36 @@ if (-not $Token) {
     }
 }
 
-# 检查中文编码
+# 检查中文编码（必做，防止乱码）
 Write-Host "`n📝 检查编码..." -ForegroundColor Cyan
-$htmlFile = Join-Path $ProjectPath "index.html"
-$content = [System.IO.File]::ReadAllText($htmlFile, [System.Text.Encoding]::UTF8)
-if ($content.Contains("樊")) {
-    Write-Host "  ✓ 编码正确" -ForegroundColor Green
-} else {
-    Write-Host "  ⚠ 编码异常，尝试修复..." -ForegroundColor Yellow
-    [System.IO.File]::WriteAllBytes($htmlFile, [System.IO.File]::ReadAllBytes($htmlFile))
-    Write-Host "  ✓ 已修复" -ForegroundColor Green
+$files = @(
+    "index.html",
+    "ad/index.html",
+    "ad/css/style.css",
+    "ad/js/main.js",
+    "css/style.css",
+    "js/main.js",
+    "deploy.ps1"
+)
+foreach ($f in $files) {
+    $fp = Join-Path $ProjectPath $f
+    if (Test-Path $fp) {
+        $content = [System.IO.File]::ReadAllText($fp, [System.Text.Encoding]::UTF8)
+        if ($content.Contains("樊")) {
+            Write-Host "  ✓ $f 编码正确" -ForegroundColor Green
+        }
+    }
 }
 
-# 更新二维码
+# 更新二维码（主站 + 广告页）
 Write-Host "`n📱 更新二维码..." -ForegroundColor Cyan
 $qrScript = "$env:TEMP\qrcode-gen\gen.cjs"
 if (Test-Path $qrScript) {
     node $qrScript "$ProjectPath\assets\qrcode.png" "https://fanleifanbufan.github.io"
+    node $qrScript "$ProjectPath\ad\assets\ad-qrcode.png" "https://fanleifanbufan.github.io/ad/"
     Write-Host "  ✓ 二维码已更新" -ForegroundColor Green
+} else {
+    Write-Host "  ⚠ 二维码生成器未安装，跳过" -ForegroundColor Yellow
 }
 
 # 部署到 GitHub
@@ -55,4 +67,7 @@ git commit -m "更新于 $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
 git push "https://$($Token)@github.com/fanleifanbufan/$($RepoName).git" main 2>&1
 Write-Host "  ✓ 推送成功！" -ForegroundColor Green
 
-Write-Host "`n✅ 完成！网址：https://fanleifanbufan.github.io" -ForegroundColor Yellow
+Write-Host "`n✅ 部署完成！" -ForegroundColor Green
+Write-Host "📎 个人主页：https://fanleifanbufan.github.io" -ForegroundColor Yellow
+Write-Host "📎 广告页：https://fanleifanbufan.github.io/ad/" -ForegroundColor Yellow
+Write-Host "📱 扫描网站上的二维码即可访问" -ForegroundColor Yellow
