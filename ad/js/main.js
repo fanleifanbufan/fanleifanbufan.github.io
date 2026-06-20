@@ -1,61 +1,18 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Hero Canvas
-    const canvas = document.getElementById('heroCanvas');
-    if (canvas) {
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-        class Particle {
-            constructor() { this.reset(); }
-            reset() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2.5 + 0.5;
-                this.speedY = -(Math.random() * 0.3 + 0.1);
-                this.opacity = Math.random() * 0.3 + 0.1;
-                this.pulse = Math.random() * Math.PI * 2;
-            }
-            update() {
-                this.y += this.speedY;
-                this.pulse += 0.015;
-                this.opacity += Math.sin(this.pulse) * 0.002;
-                this.opacity = Math.max(0.05, Math.min(0.4, this.opacity));
-                if (this.y < -10) { this.reset(); this.y = canvas.height + 10; }
-            }
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(201, 169, 110, ${this.opacity})`;
-                ctx.fill();
-            }
-        }
-        function init() {
-            const count = Math.min(Math.floor(canvas.width * 0.03), 60);
-            particles = Array.from({length: count}, () => new Particle());
-        }
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => { p.update(); p.draw(); });
-            requestAnimationFrame(animate);
-        }
-        resize(); init(); animate();
-        window.addEventListener('resize', () => { resize(); init(); });
-    }
+document.addEventListener("DOMContentLoaded",()=>{
+const c=document.getElementById("heroCanvas");
+if(c){const t=c.getContext("2d");let p=[];
+function r(){c.width=window.innerWidth,c.height=window.innerHeight}
+class P{constructor(){this.reset()}reset(){this.x=Math.random()*c.width,this.y=Math.random()*c.height,this.s=Math.random()*2.5+0.5,this.sy=-(Math.random()*0.3+0.1),this.o=Math.random()*0.2+0.05,this.ps=Math.random()*6}
+update(){this.y+=this.sy;this.ps+=0.02;this.o+=Math.sin(this.ps)*0.002;this.o=Math.max(0.02,Math.min(0.25,this.o));if(this.y<-10){this.reset();this.y=c.height+10}}
+draw(){t.beginPath();t.arc(this.x,this.y,this.s,0,Math.PI*2);t.fillStyle="rgba(0,0,0,"+this.o+")";t.fill()}}
+function init(){let cnt=Math.min(Math.floor(c.width*0.025),40);p=Array.from({length:cnt},()=>new P())}
+function a(){t.clearRect(0,0,c.width,c.height);p.forEach(e=>{e.update();e.draw()});requestAnimationFrame(a)}
+r();init();a();window.addEventListener("resize",()=>{r();init()})}
 
-    // Scroll reveal
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-        });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+const nav=document.getElementById("navbar");
+window.addEventListener("scroll",()=>{nav.classList.toggle("scrolled",window.scrollY>60)},{passive:true});
 
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', (e) => {
-            e.preventDefault();
-            const t = document.querySelector(a.getAttribute('href'));
-            if (t) t.scrollIntoView({ behavior: 'smooth' });
-        });
-    });
-});
+const ob=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");ob.unobserve(e.target)}})},{threshold:0.1});
+document.querySelectorAll(".reveal").forEach(e=>ob.observe(e));
+
+document.querySelectorAll("a[href^="#"]").forEach(a=>{a.addEventListener("click",e=>{e.preventDefault();const t=document.querySelector(a.getAttribute("href"));if(t)t.scrollIntoView({behavior:"smooth"})})})});
