@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body><video class="page-bg-video" autoplay muted loop playsinline><source src="assets/hero-bg.mp4" type="video/mp4"></video><div class="page-bg-fallback"></div><div class="page-bg-overlay"></div>
-<nav class="navbar" id="navbar"><div class="container nav-container">
+<nav class="navbar" id="navbar"><div class="container nav-container" style="position:relative">
 <a href="#hero" class="logo" style="letter-spacing:1px;font-weight:700">COLEX</a>
 <ul class="nav-links">
 <li><a href="#pricing" class="nav-link">套餐</a></li>
@@ -18,8 +18,18 @@
 <li><a href="#faq" class="nav-link">FAQ</a></li>
 <li><a href="#contact" class="nav-link">联系</a></li>
 </ul>
-<a href="#contact" class="btn btn-nav">立即咨询</a>
+<a href="#contact" class="btn btn-nav btn-nav-dt">立即咨询</a><button class="menu-toggle" id="menuToggle" aria-label="菜单"><span></span><span></span><span></span></button>
 </div></nav>
+<!-- Mobile Nav -->
+<div class="mobile-nav-overlay" id="mobileOverlay"></div>
+<div class="mobile-nav-panel" id="mobilePanel">
+<a href="#pricing">套餐报价</a>
+<a href="#features">服务内容</a>
+<a href="#audience">适合人群</a>
+<a href="#process">制作流程</a>
+<a href="#faq">常见问题</a>
+<a href="#contact" class="btn btn-nav" style="display:block;text-align:center;margin-top:auto">立即咨询</a>
+</div>
 
 <section id="hero" class="hero">
 <video class="page-bg-video" autoplay muted loop playsinline><source src="assets/hero-bg.mp4" type="video/mp4"></video><div class="page-bg-fallback"></div>
@@ -119,5 +129,16 @@
 </div></section>
 
 <script src="js/main.js"></script>
+<!-- QR FAB (mobile) -->
+<button class="qr-fab" id="qrFab" aria-label="扫码访问">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="8" height="8" rx="1"/><rect x="14" y="2" width="8" height="8" rx="1"/><rect x="2" y="14" width="8" height="8" rx="1"/><path d="M14 14h8v8h-8z"/><path d="M14 14l8 8m0-8l-8 8"/></svg>
+</button>
+<div class="qr-fab-modal" id="qrFabModal">
+<div class="qr-fab-modal-content">
+<img src="assets/ad-qrcode.png" alt="扫码访问">
+<p>微信/浏览器扫描二维码<br>立即访问个人名片网站</p>
+<button class="btn">关闭</button>
+</div>
+</div>
 </body>
 </html>
