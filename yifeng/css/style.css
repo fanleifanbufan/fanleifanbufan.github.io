@@ -1,11 +1,11 @@
 ﻿/* Video Background */
-.hero-bg-video{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;object-fit:cover}
-.hero-bg-fallback{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1;background:linear-gradient(135deg,#0a0a0e 0%,#1a1a2e 30%,#0f0f18 60%,#0a0a0e 100%);background-size:400% 400%;animation:gradientShift 12s ease infinite;pointer-events:none;display:none}
+#heroCanvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0}
+
 @keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(10,10,14,.6) 0%,rgba(10,10,14,.3) 50%,rgba(10,10,14,.7) 100%)}
 
 @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:768px){.hero-bg-video{display:none!important}.hero-bg-fallback{display:block!important}.hero-overlay{background:rgba(0,0,0,.65)!important}}
+@media(max-width:768px){#heroCanvas{display:block}}
 
 /* Root */
 :root{--bg:#0a0a0e;--bg-alt:#101016;--bg-card:#181820;--accent:#c9a96e;--accent-light:#dfc28a;--accent-glow:rgba(201,169,110,.08);--text:#ece8e1;--text-sec:#96929a;--text-muted:#5c5862;--border:#22222a;--font-serif:'Noto Serif SC',serif;--font-sans:'Noto Sans SC',sans-serif;--cw:1700px;--nav:70px;--ease:cubic-bezier(.22,1,.36,1)}
