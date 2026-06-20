@@ -1,5 +1,5 @@
 ﻿// ============================
-// main.js — 樊磊 · 个人简历网站
+// main.js — 奕峰 · 专业情感导师 · 个人网站
 // ============================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -294,5 +294,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    console.log('樊磊 · 个人网站已加载');
+    console.log('奕峰 · 个人网站已加载');
 });
