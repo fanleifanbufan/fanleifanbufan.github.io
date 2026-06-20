@@ -238,66 +238,7 @@ img{display:block;max-width:100%}
         font-size: 11px !important;
     }
     
-    /* Mobile Floating QR FAB */
-    .qr-fab {
-        display: flex;
-        position: fixed;
-        bottom: 24px; right: 20px;
-        width: 56px; height: 56px;
-        background: var(--text);
-        color: #fff;
-        border: none;
-        border-radius: 50%;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 16px rgba(0,0,0,.15);
-        cursor: pointer;
-        z-index: 50;
-        transition: transform .2s var(--ease);
-    }
-    .qr-fab:active { transform: scale(.92); }
-    .qr-fab svg { width: 24px; height: 24px; }
-    
-    .qr-fab-modal {
-        display: none;
-        position: fixed;
-        top: 0; left: 0;
-        width: 100vw; height: 100vh;
-        background: rgba(0,0,0,.6);
-        z-index: 200;
-        align-items: center;
-        justify-content: center;
-        padding: 40px;
-    }
-    .qr-fab-modal.active { display: flex; }
-    .qr-fab-modal-content {
-        background: #fff;
-        border-radius: 20px;
-        padding: 32px;
-        text-align: center;
-        max-width: 320px;
-        width: 100%;
-    }
-    .qr-fab-modal-content img {
-        width: 200px; height: 200px;
-        margin: 0 auto 16px;
-        display: block;
-    }
-    .qr-fab-modal-content p {
-        font-size: 14px;
-        color: #6b7280;
-        margin-bottom: 20px;
-    }
-    .qr-fab-modal-content .btn {
-        width: 100%;
-        padding: 12px;
-        background: var(--text);
-        color: #fff;
-        border: none;
-        border-radius: 10px;
-        font-size: 14px;
-        cursor: pointer;
-    }
+
 
     /* Sections */
     .section { padding: 40px 0; }
@@ -389,5 +330,4 @@ img{display:block;max-width:100%}
     .hero-desc { font-size: 16px; line-height: 1.8; }
     .hero-stat-box { padding: 28px 24px; }
     .hero-stat-box h3 { font-size: 40px; }
-    .qr-fab, .qr-fab-modal { display: none !important; }
 }

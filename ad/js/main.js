@@ -23,11 +23,5 @@ toggle?.addEventListener("click",()=>{panel?.classList.contains("active")?closeM
 overlay?.addEventListener("click",closeMenu);
 panel?.querySelectorAll("a").forEach(a=>a.addEventListener("click",closeMenu));
 
-// ======== QR FAB (mobile only) ========
-const fabBtn=document.getElementById("qrFab");
-const fabModal=document.getElementById("qrFabModal");
-fabBtn?.addEventListener("click",()=>fabModal?.classList.add("active"));
-document.querySelector("#qrFabModal .btn")?.addEventListener("click",()=>fabModal?.classList.remove("active"));
-fabModal?.addEventListener("click",e=>{if(e.target===fabModal)fabModal.classList.remove("active")});
 
 });
