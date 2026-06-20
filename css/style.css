@@ -853,11 +853,6 @@ img { display: block; max-width: 100%; }
 }
 
 
-/* QR Code */
-.contact-qr {
-    text-align: center;
-    margin-top: 40px;
-}
 
 .qr-wrapper {
     display: inline-block;
