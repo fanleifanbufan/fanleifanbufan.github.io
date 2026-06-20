@@ -1,6 +1,6 @@
 ﻿/* Video Background */
-.page-bg-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-2;pointer-events:none;opacity:0.15}
-.page-bg-fallback{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1;background:linear-gradient(135deg,#0a0a0e 0%,#1a1a2e 30%,#0f0f18 60%,#0a0a0e 100%);background-size:400% 400%;animation:gradientShift 12s ease infinite;pointer-events:none;display:block}
+.page-bg-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-2;pointer-events:none;opacity:0.08}
+.page-bg-fallback{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1;background:linear-gradient(135deg,#0a0a0e 0%,#1a1a2e 30%,#0f0f18 60%,#0a0a0e 100%);pointer-events:none;display:block}
 @keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 .page-bg-overlay{position:fixed;inset:0;z-index:-1;background:rgba(0,0,0,.5);backdrop-filter:blur(2px)}
 @media(max-width:768px){.hero-inner{padding:36px 20px}.page-bg-video{display:none!important}.page-bg-fallback{display:block!important}.page-bg-overlay{background:rgba(0,0,0,.6)!important}}
