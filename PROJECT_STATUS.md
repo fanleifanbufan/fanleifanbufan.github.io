@@ -9,9 +9,10 @@
 
 ## Latest Status
 
+- 2026-06-25 16:18 +08:00: Published commit `55264e9` to `origin/main`. GitHub Pages reports status `built`, and the live homepage HTML includes the new hero video/CSS cache-busting references.
 - 2026-06-25 16:16 +08:00: Migrated the hero video layout into the real GitHub Pages checkout. Replaced `assets/hero-bg.mp4` with the H.264 version, updated hero CSS for full-bleed video with right-aligned foreground text, kept video visible on mobile, and added cache-busting query strings.
 - 2026-06-25 16:15 +08:00: Real GitHub Pages repository was cloned locally. Project maintenance files were initialized before migrating the hero video layout changes.
 
 ## Active Work
 
-- Migrate the prepared hero video background layout into the real GitHub Pages homepage, then commit and push to `main`.
+- Review the live GitHub Pages homepage visually and fine-tune the hero text placement or overlay strength if needed.
