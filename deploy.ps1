@@ -52,7 +52,6 @@ $qrScript = "$env:TEMP\qrcode-gen\gen.cjs"
 if (Test-Path $qrScript) {
     node $qrScript "$ProjectPath\assets\qrcode.png" "https://fanleifanbufan.github.io"
     node $qrScript "$ProjectPath\ad\assets\ad-qrcode.png" "https://fanleifanbufan.github.io/ad/"
-    node $qrScript "$ProjectPath\yifeng\assets\qrcode.png" "https://fanleifanbufan.github.io/yifeng/"
     Write-Host "  ✓ 二维码已更新" -ForegroundColor Green
 } else {
     Write-Host "  ⚠ 二维码生成器未安装，跳过" -ForegroundColor Yellow
